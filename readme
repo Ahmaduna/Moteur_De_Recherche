@@ -1,0 +1,74 @@
+# Projet Moteur de Recherche 2024
+
+## Objectif du Projet
+Ce projet a pour objectif de développer un moteur de recherche pour 2 000 documents extraits de Wikipédia en français. Le moteur permet de traiter des requêtes textuelles et de trouver les documents les plus pertinents. L’approche combinée utilise **TF-IDF** et des **vecteurs de mots** pour améliorer la précision, sans frameworks comme ElasticSearch ou Vespa.
+
+## Structure du Projet
+
+
+Moteur_De_Recherche/
+├── data/                      # Dossier contenant les données et requêtes
+│   ├── requetes.jsonl         # Fichier des requêtes (une requête par ligne en format JSON)
+│   └── wiki_split_extract_2k/ # Ensemble de 2 000 documents Wikipedia en français
+│
+├── models/                    # Modèles de vecteurs de mots
+│   └── fasttext_model.bin     # Modèle FastText pré-entraîné
+│
+├── src/                       # Code source du projet
+│   ├── index1.py             # Script pour l'indexation des documents
+│   ├── search1.py       # Moteur de recherche principal
+│   ├── tfidf1.py               # Calcul des scores TF-IDF
+│   └── evaluation1.py          # Évaluation des performances
+│
+
+│
+├── README.md                  # Documentation et instructions d'utilisation
+├── requirements.txt           # Liste des dépendances Python
+├── .gitignore                 # Fichier pour exclure des fichiers et dossiers du suivi Git
+
+
+
+## Installation de l'Environnement
+Avant de commencer, assurez-vous d'avoir installé **Python 3.7+**. Vous pouvez installer toutes les dépendances nécessaires en utilisant `requirements.txt` :
+
+```bash
+pip install -r requirements.txt
+```
+
+## Utilisation du Moteur de Recherche
+
+1. **Préparer les données** :
+   - Placez les documents dans le dossier `data/wiki_split_extract_2k`.
+   - Assurez-vous que le fichier de requêtes `requetes.jsonl` est également présent dans le dossier `data`.
+
+2. **Télécharger le modèle FastText** :
+   - Téléchargez un modèle de vecteurs FastText pré-entraîné (par exemple, [ici](https://fasttext.cc/docs/en/crawl-vectors.html)) et placez-le dans le dossier `models/`.
+   - Modifiez le chemin vers le modèle FastText dans `search1.py` si nécessaire.
+
+3. **Exécuter le moteur de recherche** :
+   - Lancez le script principal (index1.py) pour créer l'index, effectuer la recherche, et évaluer les résultats. Les étapes peuvent inclure :
+     
+
+### Détails du Fonctionnement
+Les principales étapes du moteur de recherche incluent :
+- **Indexation** : Crée un index inversé pour associer chaque terme aux documents dans lesquels il apparaît.
+- **Calcul des scores de correspondance** : Les scores TF-IDF et les vecteurs de mots FastText sont calculés pour chaque terme.
+- **Affichage des résultats** : Le moteur affiche les documents les plus pertinents pour chaque requête en fonction de leur score final.
+
+## Méthodologie Appliquée
+
+Le projet combine plusieurs techniques avancées pour optimiser la pertinence des résultats :
+
+- **TF-IDF (Term Frequency - Inverse Document Frequency)** : Technique de pondération pour évaluer l’importance relative d’un mot dans un document. 
+- **Modèle Vectoriel avec FastText** : Utilise des vecteurs de mots pré-entraînés pour capturer des similarités sémantiques, améliorant la pertinence en prenant en compte le contexte.
+- **BM25** : Une variante avancée de TF-IDF, qui prend en compte la longueur des documents et la fréquence des termes pour un meilleur score de pertinence.
+
+Le modèle final combine les scores TF-IDF, BM25, et de similarité vectorielle pour obtenir des résultats précis.
+
+## Auteurs
+-Ahmad Momar DIOP
+-Saad RAFIQUL
+-Mouheb SABRI
+
+
+
