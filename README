@@ -35,11 +35,11 @@ pip install -r requirements.txt
  Utilisation du Moteur de Recherche
 
 1. Préparer les données :
-   - Placez les documents dans le dossier `data/wiki_split_extract_2k`.
-   - Assurez-vous que le fichier de requêtes `requetes.jsonl` est également présent dans le dossier `data`.
+   - Placez les documents dans le dossier data/wiki_split_extract_2k.
+   - Assurez-vous que le fichier de requêtes `requetes.jsonl` est également présent dans le dossier data.
 
 2. Télécharger le modèle FastText :
-   - Téléchargez un modèle de vecteurs FastText pré-entraîné (par exemple, [ici](https://fasttext.cc/docs/en/crawl-vectors.html)) et placez-le dans le dossier `models/`.
+   - Téléchargez un modèle de vecteurs FastText pré-entraîné (https://fasttext.cc/docs/en/crawl-vectors.html) et placez-le dans le dossier models/.
    - Modifiez le chemin vers le modèle FastText dans `search1.py` si nécessaire.
 
 3. Exécuter le moteur de recherche :
