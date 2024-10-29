@@ -1,8 +1,7 @@
  Projet Moteur de Recherche 2024
 
 Objectif du Projet
-Ce projet a pour objectif de développer un moteur de recherche pour 2 000 documents extraits de Wikipédia en français. Le moteur permet de traiter des requêtes textuelles et de trouver les documents les plus pertinents. L’approche combinée utilise **TF-IDF** et des **vecteurs de mots** pour améliorer la précision, sans frameworks comme ElasticSearch ou Vespa.
-
+Ce projet a pour objectif de développer un moteur de recherche pour 2 000 documents extraits de Wikipédia en français. Le moteur permet de traiter des requêtes textuelles et de trouver les documents les plus pertinents. L’approche combinée utilise TF-IDF et des vecteurs de mots pour améliorer la précision.
 Structure du Projet
 
 
